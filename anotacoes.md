@@ -47,3 +47,11 @@ Porém, se clicarmos no botão em questão, ele não vai reproduzir o som ainda,
     document.querySelector('.tecla_pom').onclick = tocaSomPom;
 ```
 Nesse caso ja chamamos a função do tocaSomPom que definimos anteriormente, e chamamos pela atribuição da função no atributo de onclick. Porém se atente a uma coisa, a função foi colocada sem os parenteses, porque se colocarmos o parenteses a função vai ser chamada junto com a outra função do tocaSomPom, e não queremos isso.
+
+
+Agora como passamos um som para todos os botões do site? Se a gente for fazer uma função pra cada tecla, para cada botão, vai ficar gigante o código, e não é isso que queremos. Temos que usar algo para puxar todos os seletores, então:
+```
+    document.querySelectorAll('');
+```
+Vai buscar todos os seletores que informarmos entre os parenteses. Ele vai formar uma lista, se podemos dizer assim.
+

@@ -55,3 +55,13 @@ Agora como passamos um som para todos os botões do site? Se a gente for fazer u
 ```
 Vai buscar todos os seletores que informarmos entre os parenteses. Ele vai formar uma lista, se podemos dizer assim.
 
+
+Para facilitar o entendimento do nosso código, e também para que faça sentido, usamos uma variável, ou constante, com um nome especifico para aquilo, dessa forma aqui:
+```
+    const nomeDaVariavel = document.querySelectorall('');
+```
+
+Só que não conseguimos acessar as funcionalidades por meio de uma variavel, então temos que colocar [] e definir qual dos elementos queremos, e o numero vai de 0 até (a quantidade de elementos que tem na lista - 1).
+```
+    listaDeTeclas[0].onclick = tocaSomPom;
+```

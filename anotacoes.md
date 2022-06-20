@@ -65,3 +65,19 @@ Só que não conseguimos acessar as funcionalidades por meio de uma variavel, en
 ```
     listaDeTeclas[0].onclick = tocaSomPom;
 ```
+
+Porém e se tivermos que trabalhar com uma estrutura grande de muitas teclas? não fica viavel escrever tecla por tecla, então usamos uma estrutura de repetição, que é o enquanto.
+```
+    while(){
+        listaDeTeclas[0].onclick = tocaSomPom;
+    }
+```
+Essa estrutura de repetição faz o teste no final, tome cuidado com o loop.
+
+Na estrutura while precisamos colocar uma condição para que o código seja executado, e precisamos passar um incremento para que ele pare uma hora, então usamos a seguinte estrutura:
+```
+    while (contador < listaDeTeclas.length){
+        contador++;
+    }
+```
+Precisamos criar a variavel contador anteriormente, como let. A listaDeTeclas.length é para ver a quantidade de teclas que possui, para a gente não tem que escrever um valor especifico (que pode ser mudado).

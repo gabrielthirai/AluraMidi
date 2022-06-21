@@ -121,3 +121,17 @@ Agora só precisamos passar o idAudio para dentro do onclick, e ja teremos todas
         tocaSom(idAudio);
     }
 ```
+
+
+Para que não tenha que criar uma variável fora da estrutura de repetição, usamos o for, então:
+```
+    for (let contador = 0; contador < listaDeTeclas.length; contador++){
+        const tecla = listaDeTeclas[contador];
+        const instrumento = tecla.classList[1];
+        const idAudio = `#som_${instrumento}`;
+
+        tecla.onclick = function(){
+            tocaSom(idAudio);
+        }
+    }
+```

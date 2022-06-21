@@ -81,3 +81,17 @@ Na estrutura while precisamos colocar uma condição para que o código seja exe
     }
 ```
 Precisamos criar a variavel contador anteriormente, como let. A listaDeTeclas.length é para ver a quantidade de teclas que possui, para a gente não tem que escrever um valor especifico (que pode ser mudado).
+
+Temos que criar um parametro para a função para que assim ela consiga tocar um som sem que tenha que criar uma função para cada som, então usamos:
+```
+    function tocaSom (idElementoAudio){
+    document.querySelector(idElementoAudio).play();
+    }
+```
+
+Agora precisamos atribuir o som em cada tecla, usando o onclick, para isso precisamos colocar uma função anônima, uma função sem nome, para usar a função sem nome precisa-se que a função seja valor de algum atributo ou é armazenado em uma const ou let.
+```
+    listaDeTeclas[contador].onclick = function(){
+        tocaSom('#som_tecla_pom');
+    }
+```

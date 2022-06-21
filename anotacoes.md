@@ -61,10 +61,12 @@ Para facilitar o entendimento do nosso código, e também para que faça sentido
     const nomeDaVariavel = document.querySelectorall('');
 ```
 
+
 Só que não conseguimos acessar as funcionalidades por meio de uma variavel, então temos que colocar [] e definir qual dos elementos queremos, e o numero vai de 0 até (a quantidade de elementos que tem na lista - 1).
 ```
     listaDeTeclas[0].onclick = tocaSomPom;
 ```
+
 
 Porém e se tivermos que trabalhar com uma estrutura grande de muitas teclas? não fica viavel escrever tecla por tecla, então usamos uma estrutura de repetição, que é o enquanto.
 ```
@@ -82,6 +84,7 @@ Na estrutura while precisamos colocar uma condição para que o código seja exe
 ```
 Precisamos criar a variavel contador anteriormente, como let. A listaDeTeclas.length é para ver a quantidade de teclas que possui, para a gente não tem que escrever um valor especifico (que pode ser mudado).
 
+
 Temos que criar um parametro para a função para que assim ela consiga tocar um som sem que tenha que criar uma função para cada som, então usamos:
 ```
     function tocaSom (idElementoAudio){
@@ -89,9 +92,32 @@ Temos que criar um parametro para a função para que assim ela consiga tocar um
     }
 ```
 
+
 Agora precisamos atribuir o som em cada tecla, usando o onclick, para isso precisamos colocar uma função anônima, uma função sem nome, para usar a função sem nome precisa-se que a função seja valor de algum atributo ou é armazenado em uma const ou let.
 ```
     listaDeTeclas[contador].onclick = function(){
         tocaSom('#som_tecla_pom');
+    }
+```
+
+
+No JS podemos acessar uma classe individualmente, para isso bastar chamar a listaDeTeclas informando qual tecla você deseja, e colocar a propriedade JS, classList[].
+```
+    listaDeTeclas[contador].classList[1];
+```
+Nesse caso eu usei o contador pois está dentro de um while. Assim eu não preciso ficar digitando tecla por tecla, o contador faz isso para mim.
+
+
+Para que possamos então colocar um áudio em cada tecla, vamos usar o template string
+```
+    const idAudio = `#som_${instrumento}`;
+```
+Basicamente vai pegar o #som_ e vai atribuir o que me retornar da const instrumento.
+
+
+Agora só precisamos passar o idAudio para dentro do onclick, e ja teremos todas as teclas funcionando como deveria e com seu respectivo som.
+```
+    tecla.onclick = function(){
+        tocaSom(idAudio);
     }
 ```

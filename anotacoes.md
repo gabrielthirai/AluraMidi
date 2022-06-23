@@ -135,3 +135,38 @@ Para que não tenha que criar uma variável fora da estrutura de repetição, us
         }
     }
 ```
+
+Agora temos um problema visual, quando usamos o espaço ou o enter para apertar nas teclas, ele não fica vermelha, ou seja, não está com a classe ativa, então precisamos mudar isso no js.
+```
+    tecla.onkeydown = function(){
+        tecla.classList.add('ativa');
+    }
+```
+Basicamente vai adicionar a classe ativa no html na execução da página. Só que precisamos remover classe também
+```
+    tecla.onkeyup = function(){
+        tecla.classList.remove('ativa');
+    }
+```
+o onkeydown e o onkeyup é para definir quando o usuario clica na tecla do teclado.
+
+
+No JS existe 2 operadores de igualdade, o "==" e o "===". A diferença é que no == vai ser comparado o valor, ja no === vai ser comparado o tipo de dado e o valor.
+
+
+Agora para limitar as teclas no js, vamos usar uma propriedade, que é o "code", para isso vamos colocar um evento na function
+```
+    tecla.onkeydown = function(evento){
+        
+        if(evento.code === 'Space' ){
+            tecla.classList.add('ativa');
+        }
+    }
+```
+Basicamente o que vai acontecer é que se usarmos o espaço para reproduzir o som, ele vai ficar vermelho, caso contrario não vai ficar vermelho. Porém precisamos informar que vão ser duas teclas que usaremos, o espaço e o enter, então colocamos o operador lógico "or", no caso do js é o ||.
+``` 
+    if(evento.code === 'Space' || evento.code === 'Enter'){
+            tecla.classList.add('ativa');
+        }
+    }
+```
